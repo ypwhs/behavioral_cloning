@@ -2,7 +2,7 @@
 
 行为克隆
 
-![](https://raw.githubusercontent.com/ypwhs/resources/master/behavioral_cloning.gif)
+[![](https://raw.githubusercontent.com/ypwhs/resources/master/behavioral_cloning.gif)](https://www.youtube.com/watch?v=OiFDMKKvO48)
 
 ## 网络结构
 
