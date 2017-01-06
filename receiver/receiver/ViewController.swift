@@ -36,7 +36,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
     
     func udpSocket(_ sock: GCDAsyncUdpSocket, didReceive data: Data, fromAddress address: Data, withFilterContext filterContext: Any?) {
         let value = Double(String(data: data, encoding: .utf8)!)!
-        self.image.image = self.img.imageRotated(by: CGFloat(180*self.value))
+        self.image.image = self.img.imageRotated(by: CGFloat(value*180))
     }
     
 }
