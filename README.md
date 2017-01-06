@@ -2,9 +2,11 @@
 
 行为克隆
 
-[![](https://raw.githubusercontent.com/ypwhs/resources/master/behavioral_cloning.gif)](https://www.youtube.com/watch?v=OiFDMKKvO48)
+[![](https://raw.githubusercontent.com/ypwhs/resources/master/behavioral_cloning.gif)](http://www.bilibili.com/video/av7872806/)
 
-(点击图片查看高清版的YouTube视频)
+[![](https://raw.githubusercontent.com/ypwhs/resources/master/behavioral_cloning_3.gif)](http://www.bilibili.com/video/av7880273/)
+
+(点击查看b站视频)
 
 ## 网络结构
 
