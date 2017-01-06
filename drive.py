@@ -15,23 +15,21 @@ from io import BytesIO
 from keras.models import model_from_json
 from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_array
 
-from keras.backend.tensorflow_backend import set_session
-import tensorflow as tf
-
-import random
-
-config = tf.ConfigProto()
-config.gpu_options.allow_growth=True
-set_session(tf.Session(config=config))
+import socket
+from utils import Smooth
 
 sio = socketio.Server()
 app = Flask(__name__)
 model = None
 prev_image_array = None
 image_size = (128, 128)
+address = ("0.0.0.0", 20160)
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+smooth = Smooth(windowsize=20)
 
 @sio.on('telemetry')
 def telemetry(sid, data):
+    global smooth
     # The current steering angle of the car
     steering_angle = data["steering_angle"]
     # The current throttle of the car
@@ -52,7 +50,9 @@ def telemetry(sid, data):
         #     steering_angle += (random.random() - 0.5)
         # The driving model currently just outputs a constant throttle. Feel free to edit this.
         throttle = 1
-        print(steering_angle, throttle)
+        smooth += steering_angle
+        s.sendto(str(smooth), address)
+        print("%.3f" % steering_angle, throttle)
     except Exception as e:
         print e
     send_control(steering_angle, throttle)
