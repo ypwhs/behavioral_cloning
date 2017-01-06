@@ -4,6 +4,8 @@
 
 [![](https://raw.githubusercontent.com/ypwhs/resources/master/behavioral_cloning.gif)](https://www.youtube.com/watch?v=OiFDMKKvO48)
 
+(点击图片查看高清版的YouTube视频)
+
 ## 网络结构
 
 采用带 image-net 预训练权重的 VGG16 作为网络的特征采集层
